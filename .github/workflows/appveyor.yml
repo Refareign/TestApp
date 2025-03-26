@@ -1,0 +1,19 @@
+version: 1.0.{build}
+
+environment:
+  matrix:
+    - COMPILER: g++
+
+install:
+  # Установка MinGW (компилятор C++)
+  - choco install mingw -y
+
+build_script:
+  # Сборка проекта
+  - mkdir build
+  - cd build
+  - g++ ../src/main.cpp -o TestApp.exe
+
+test_script:
+  # Запуск исполняемого файла
+  - ./build/TestApp.exe
