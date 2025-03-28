@@ -12,6 +12,10 @@ build:
   project: TestApp.sln
   verbosity: minimal
 
+after_build:
+  - echo "Copying artifacts to local directory..."
+  - xcopy Release\TestApp.exe C:\help\to\deploy\ /Y
+
 artifacts:
   - path: Release\*.exe
     name: TestAppExecutable
