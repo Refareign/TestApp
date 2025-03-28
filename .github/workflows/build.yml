@@ -1,4 +1,4 @@
-name: Build 
+name: Build and Deploy
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: self-hosted  # Используем локальный Runner
 
     steps:
     - name: Checkout code
@@ -22,5 +22,5 @@ jobs:
     - name: Build with MSBuild
       run: msbuild TestApp.sln /p:Configuration=Release
 
-    - name: Run the compiled program
-      run: ./Release/TestApp.exe
+    - name: Copy executable to local directory
+      run: xcopy x64\Release\TestApp.exe C:\help\to\deploy\ /Y
