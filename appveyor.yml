@@ -1,0 +1,17 @@
+version: 1.0.{build}
+
+image: Visual Studio 2022
+
+configuration: Release
+
+before_build:
+  - echo "Restoring NuGet packages..."
+  - nuget restore
+
+build:
+  project: TestApp.sln
+  verbosity: minimal
+
+artifacts:
+  - path: Release\*.exe
+    name: TestAppExecutable
