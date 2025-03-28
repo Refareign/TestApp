@@ -14,8 +14,8 @@ build:
 
 after_build:
   - echo "Copying artifacts to local directory..."
-  - xcopy Release\TestApp.exe C:\help\to\deploy\ /Y
+  - xcopy x64\Release\TestApp.exe C:\help\to\deploy\ /Y
 
 artifacts:
-  - path: Release\*.exe
+  - path: x64\Release\*.exe
     name: TestAppExecutable
