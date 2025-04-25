@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['square_0',['square',['../_test_app_8cpp.html#a435ef393d7d5394df67d5da81c108c7d',1,'TestApp.cpp']]]
+  ['readme_0',['README',['../md_README.html',1,'']]],
+  ['readme_2emd_1',['README.md',['../README_8md.html',1,'']]]
 ];

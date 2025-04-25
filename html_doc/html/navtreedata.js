@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
-    [ "README", "md__r_e_a_d_m_e.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Файлы", "files.html", [
       [ "Файлы", "files.html", "files_dup" ],
       [ "Список членов всех файлов", "globals.html", [
@@ -38,7 +38,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_test_app_8cpp.html"
+"TestApp_8cpp.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';
