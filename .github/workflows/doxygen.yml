@@ -6,7 +6,6 @@ on:
       - master
     paths:
       - '**.cpp'
-      - '**.h'
       - 'Doxyfile'
 
 jobs:
