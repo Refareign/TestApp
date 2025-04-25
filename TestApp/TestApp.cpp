@@ -17,11 +17,21 @@ double square(double x) {
 }
 
 /**
+ * @brief Вычисляет куб числа.
+ * @param x Входное число.
+ * @return Куб числа x.
+ */
+double cube(double x) {
+    return x * x * x;
+}
+
+/**
  * @brief Точка входа в программу.
  * @return Код завершения программы (0 — успех).
  */
 int main()
 {
     std::cout << "Square of 5: " << square(5) << std::endl;
+    std::cout << "Cube of 3: " << cube(3) << std::endl;
     return 0;
 }
