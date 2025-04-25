@@ -8,11 +8,20 @@
 #include <iostream>
 
  /**
-  * @brief Точка входа в программу.
-  * @return Код завершения программы (0 — успех).
+  * @brief Вычисляет квадрат числа.
+  * @param x Входное число.
+  * @return Квадрат числа x.
   */
-int main() 
+double square(double x) {
+    return x * x;
+}
+
+/**
+ * @brief Точка входа в программу.
+ * @return Код завершения программы (0 — успех).
+ */
+int main()
 {
-    std::cout << "Hello, Doxygen!" << std::endl;
+    std::cout << "Square of 5: " << square(5) << std::endl;
     return 0;
 }
