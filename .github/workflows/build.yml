@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Используем локальный Runner
+    runs-on: windows-latest  
 
     steps:
     - name: Checkout code
