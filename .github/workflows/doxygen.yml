@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.cpp'
+      - '**.h'
+      - 'Doxyfile'
 
 jobs:
   build:
@@ -12,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen
@@ -19,8 +25,10 @@ jobs:
       - name: Generate Doxygen Documentation
         run: doxygen Doxyfile
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html_doc/html
+      - name: Commit and push generated documentation
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add html_doc/html -f 
+          git commit -m "Автоматически сгенерирована документация [skip ci]" || echo "Нет изменений для коммита"
+          git push origin master
